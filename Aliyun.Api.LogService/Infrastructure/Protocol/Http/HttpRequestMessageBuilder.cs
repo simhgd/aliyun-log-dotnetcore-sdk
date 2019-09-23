@@ -36,7 +36,7 @@ using Aliyun.Api.LogService.Infrastructure.Authentication;
 using Aliyun.Api.LogService.Utils;
 using Google.Protobuf;
 using Ionic.Zlib;
-using LZ4;
+using K4os.Compression.LZ4;
 #if NETSTANDARD2_0
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -283,7 +283,10 @@ namespace Aliyun.Api.LogService.Infrastructure.Protocol.Http
                 case CompressType.Lz4:
                     {
                         this.SetCompressType("lz4");
-                        this.content = LZ4Codec.Encode(this.SerializedContent, 0, this.SerializedContent.Length);
+                        Byte[] buff = new Byte[LZ4Codec.MaximumOutputSize(this.SerializedContent.Length)];
+                        var actualLength = LZ4Codec.Encode(this.SerializedContent, 0, this.SerializedContent.Length, buff, 0, buff.Length);
+                        Array.Resize(ref buff, actualLength);
+                        this.content = buff;
                         break;
                     }
 

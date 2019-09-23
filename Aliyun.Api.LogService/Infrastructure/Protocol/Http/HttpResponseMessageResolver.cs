@@ -35,7 +35,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Aliyun.Api.LogService.Utils;
 using Ionic.Zlib;
-using LZ4;
+using K4os.Compression.LZ4;
 #if NETSTANDARD2_0
 using Newtonsoft.Json;
 #else
@@ -185,8 +185,9 @@ namespace Aliyun.Api.LogService.Infrastructure.Protocol.Http
                         {
                             throw new ArgumentException($"{LogHeaders.BodyRawSize} is required when using [lz4] compress.");
                         }
-
-                        var rawData = LZ4Codec.Decode(orignData, 0, orignData.Length, rawSize.Value);
+                        Byte[] rawData = new Byte[rawSize ?? orignData.Length * 255];
+                        var actualLength = LZ4Codec.Decode(orignData, 0, orignData.Length, rawData, 0, rawSize.Value);
+                        Array.Resize(ref rawData, actualLength);
                         return rawData;
                     }
 
