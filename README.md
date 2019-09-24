@@ -6,32 +6,23 @@
 
 阿里云 LogService Rest API 的 .NET Core SDK。
 
-基于 [Microsoft.AspNet.WebApi.Client](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Client) on [.NetStandard 2.0](https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.0.md) 构建。
+基于 [.NetStandard 2.0](https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.0.md) 以及 [.NetStandard 2.1](https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.1.md) 构建。
 
 不支持 **.NetStandard 2.0** 以下的平台！
 
 ### 平台支持
 
-关于 .NetStandard 的实现支持请参考 https://docs.microsoft.com/en-us/dotnet/standard/net-standard ，当前支持：
-
-- .NET Core 2.0
-- .NET Framework (with .NET Core 1.x SDK) 4.6.2
-- .NET Framework (with .NET Core 2.0 SDK) 4.6.1
-- Mono 5.4
-- Xamarin.iOS 10.14
-- Xamarin.Mac 3.8
-- Xamarin.Android 8.0
-- Universal Windows Platform 10.0.16299
+关于 .NetStandard 的实现支持请参考 https://docs.microsoft.com/en-us/dotnet/standard/net-standard。
 
 ### 功能依赖
 
-| 功能 | 依赖 |
-| :-- | :-- |
-| Http | [Microsoft.AspNet.WebApi.Client &bull; 5.2.4](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Client/5.2.4) |
-| Json | [Json.Net &bull; 11.0.2](https://www.nuget.org/packages/Newtonsoft.Json/11.0.2) |
-| Protobuf | [Google.Protobuf &bull; 3.5.1](https://www.nuget.org/packages/Google.Protobuf/3.5.1) |
-| Zlib | [Iconic.Zlib.NetStandard &bull; 1.0.0](https://www.nuget.org/packages/Iconic.Zlib.Netstandard/1.0.0) |
-| Lz4 | [lz4net &bull; 1.0.15.93](https://www.nuget.org/packages/lz4net/1.0.15.93) |
+| 功能 | 依赖 |.net VER|
+| :-- | :-- | --: |
+| Json | [Json.Net &bull; 12.0.2](https://www.nuget.org/packages/Newtonsoft.Json/12.0.2) | .NetStandard 2.0|
+| Json | [System.Text.Json &bull; 4.6.0](https://www.nuget.org/packages/System.Text.Json/14.6.0) | .NetStandard 2.1|
+| Protobuf | [Google.Protobuf &bull; 3.9.2](https://www.nuget.org/packages/Google.Protobuf/3.9.2) | .NetStandard 2.x|
+| Zlib | [Iconic.Zlib.NetStandard &bull; 1.0.0](https://www.nuget.org/packages/Iconic.Zlib.Netstandard/1.0.0) | .NetStandard 2.x|
+| Lz4 | [K4os.Compression.LZ4 &bull; 1.0.15.93](https://www.nuget.org/packages/K4os.Compression.LZ4/1.1.11) | .NetStandard 2.x|
 
 ## 快速开始
 

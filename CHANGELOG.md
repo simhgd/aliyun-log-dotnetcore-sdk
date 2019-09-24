@@ -1,5 +1,15 @@
 # Aliyun LogServie SDK for .NET Core
 
+## 1.2.2
+
+### 变更内容
+
+- 支持.Net Standard 2.1
+- .Net Standard 2.1 使用内置`System.Text.Json` 替代 `Newtonsoft.Json`
+- 去除无用的包引用
+- 依赖变更：[lz4net &bull; 1.0.15.93](https://www.nuget.org/packages/lz4net/1.0.15.93) -> [K4os.Compression.LZ4 &bull; 1.1.11](https://www.nuget.org/packages/K4os.Compression.LZ4/1.1.11) （ K4os.Compression.LZ4 为 lz4net作者当前持续维护版本）
+- 引用包版本更新为最新版
+
 ## 1.1.0
 
 ### 变更内容
